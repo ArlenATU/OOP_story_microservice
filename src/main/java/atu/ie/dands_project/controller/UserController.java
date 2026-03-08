@@ -14,6 +14,8 @@ import lombok.RequiredArgsConstructor;
 
 // Spring Web annotations
 import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
@@ -118,5 +120,31 @@ public class UserController {
          * Calls service layer to fetch all users from database.
          */
         return userService.getAllUsers();
+    }
+}
+
+/*
+ * Separate controller for serving HTML pages.
+ * This keeps REST API and view logic organized.
+ */
+@Controller
+class ViewController {
+
+    /*
+     * Serves the registration page.
+     * Accessible at: http://localhost:8080/register
+     */
+    @GetMapping("/register")
+    public String registerPage() {
+        return "register.html";
+    }
+
+    /*
+     * Serves the login page.
+     * Accessible at: http://localhost:8080/login
+     */
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login.html";
     }
 }
