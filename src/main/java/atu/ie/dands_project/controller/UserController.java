@@ -52,7 +52,8 @@ public class UserController {
      */
     @PostMapping("/register")
     public User register(@RequestBody User user) {
-
+        System.out.println(user.getUsername());
+        System.out.println(user.getEmail());
         /*
          * @RequestBody converts incoming JSON into a User object.
          * Then we delegate logic to the service layer.
