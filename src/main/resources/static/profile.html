@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Settings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="profile-mini">
+            <img id="miniAvatar" src="/images/default-avatar.png">
+            <h3 id="username">User</h3>
+            <span>View profile</span>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Messages</a>
+            <a href="#">Blogs</a>
+            <a href="#">Connections</a>
+            <a href="#">More</a>
+        </nav>
+
+    </aside>
+
+    <main class="content">
+
+        <h1>Settings</h1>
+
+        <div class="tabs">
+            <span class="active">Profile</span>
+            <span>Personal Info</span>
+            <span>Login & Security</span>
+        </div>
+
+        <div class="settings">
+
+            <div class="setting">
+                <div>
+                    <label>Name</label>
+                    <p id="nameText"></p>
+                </div>
+                <button onclick="editName()">Edit</button>
+            </div>
+
+            <div class="setting">
+                <div>
+                    <label>Avatar</label>
+                    <img id="avatarPreview" class="avatar">
+                </div>
+                <button onclick="uploadAvatar()">Edit</button>
+            </div>
+
+            <div class="setting">
+                <div>
+                    <label>Bio</label>
+                    <p id="bioText"></p>
+                </div>
+                <button onclick="editBio()">Edit</button>
+            </div>
+
+            <div class="settings">
+                <h2>Your Star Stories</h2>
+                <div id="storiesContainer"></div>
+            </div>
+
+
+        </div>
+
+        <input type="file" id="avatarInput" accept="image/*" style="display:none">
+
+        <button class="saveBtn" onclick="saveProfile()">Save Changes</button>
+
+    </main>
+
+</div>
+
+<script src="profile.js"></script>
+
+</body>
+</html>
